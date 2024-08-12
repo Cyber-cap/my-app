@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import CssBaseline from '@mui/material/CssBaseline'
 import ThemeProvider from '../components/ThemeProvider'
+import NavBar from '../components/NavBar'
+import Box from '@mui/material/Box'
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,11 +14,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <ThemeProvider>
       <CssBaseline />
-        <body>{children}</body>
+        
+
+        <body>
+        {/* <NavBar /> */}
+          <Box>
+          {children}
+          </Box>
+          
+
+        </body>
+
       </ThemeProvider>
     </html>
   );
