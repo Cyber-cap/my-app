@@ -3,7 +3,7 @@ import React,{useState} from "react"
 import { AppBar, Toolbar, Drawer, List, ListItem, ListItemText, ListItemButton, Typography, Container, Button, Box } from "@mui/material";
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-
+import Link from 'next/link';
 
 
 // function Header(){
@@ -26,47 +26,53 @@ import Dialog from '@mui/material/Dialog';
 //   ); 
 // };
 
-function Header(){
-const [drawerOpen, setDrawer] = React.useState(false);
-const handleDrawerOpen = () => {
-  setDrawer(true);
-};
-const handleDrawerClouse = () => {
-  setDrawer(false);
-};
+// function Header(){
+// const [drawerOpen, setDrawer] = React.useState(false);
+// const handleDrawerOpen = () => {
+//   setDrawer(true);
+// };
+// const handleDrawerClouse = () => {
+//   setDrawer(false);
+// };
 
 
-  return ( 
- <AppBar position="static">
-<Toolbar>
-  <Drawer open={drawerOpen} anchor="left">
-    <List>
-      <ListItem>
-      <Button onClick={handleDrawerClouse} color="inherit">
-         Clouse
-      </Button>
-      </ListItem>
-      <ListItem>
-        <ListItemText primary="Profile55555555" />
-      </ListItem>
-    </List>
-  </Drawer>
-  <Button onClick={handleDrawerOpen} color="inherit">
-     Open
-  </Button>
+//   return ( 
+//  <AppBar position="static">
+// <Toolbar>
+//   <Drawer open={drawerOpen} anchor="left">
+//     <List>
+//       <ListItem>
+//       <Button onClick={handleDrawerClouse} color="inherit">
+//          Clouse
+//       </Button>
+//       </ListItem>
+     
+     
+//     <Link href="/AboutMe">
+//       <ListItem>
+//         <ListItemText primary="Страничка01" />
+//       </ListItem>
+//     </Link>
+   
+   
+//     </List>
+//   </Drawer>
+//   <Button onClick={handleDrawerOpen} color="inherit">
+//      Open
+//   </Button>
 
-  <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-    My appliceshion 
-  </Typography>
-</Toolbar>
+//   <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+//     My appliceshion 
+//   </Typography>
+// </Toolbar>
 
 
- </AppBar>  
+//  </AppBar>  
 
 
 
-  ); 
-};
+//   ); 
+// };
 function Content(){
 const [DialogStaite, setDialog ] = React.useState(false);
 const handlerOpenDialog = () => {
@@ -137,10 +143,11 @@ return (
           Одно начало и конец.
                             
    </Typography>
-
+      <Box padding= '20px'> 
   <Button style= {{  bottom: 0, left: '50%', transform: 'translateX(-50%)',padding: '10px' }} onClick={handlerCloseDialog2} variant="contained" color="primary">
         Закрыть
   </Button>
+  </Box>
       </DialogTitle>
 </Dialog>
        
@@ -176,7 +183,6 @@ function Footer(){
 export default function Home(){
 return(
  <Box display="flex" flexDirection="column" minHeight="100vh">
-  <Header />
   <Content />
   <Footer/>
  </Box>
