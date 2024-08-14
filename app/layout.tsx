@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import CssBaseline from '@mui/material/CssBaseline'
-import ThemeProvider from '../components/ThemeProvider'
-import Header from '../components/Header'
-import Box from '@mui/material/Box'
+import CssBaseline from "@mui/material/CssBaseline";
+import ThemeProvider from "../components/ThemeProvider";
+import Header from "../components/Header";
+import Box from "@mui/material/Box";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,22 +15,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <ThemeProvider>
-      <CssBaseline />
-        
+        <CssBaseline />
 
         <body>
-        <Header /> 
-          <Box>
-          {children}
-          </Box>
-          
+        <Box display="flex" flexDirection="column" minHeight="100vh">
 
+          <Header />
+          <Box>{children}</Box>
+          <Footer />
+        </Box>
         </body>
-
       </ThemeProvider>
     </html>
   );
