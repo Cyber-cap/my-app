@@ -21,7 +21,7 @@ export default function RootLayout({
         <CssBaseline />
 
         <body>
-        <Box display="flex" flexDirection="column" minHeight="100vh">
+        <Box   display="flex" flexDirection="column" minHeight="100vh">
 
           <Header />
           <Box>{children}</Box>
