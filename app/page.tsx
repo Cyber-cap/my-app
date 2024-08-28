@@ -141,7 +141,7 @@ function Content() {
               variant="contained"
               color="primary"
             >
-              Закрыть
+              Close
             </Button>
           </Box>
         </DialogTitle>

@@ -1,12 +1,21 @@
-"use client"
-import React,{useState} from "react"
-import { AppBar, Toolbar, Drawer, List, ListItem, ListItemText, ListItemButton, Typography, Container, Button, Box } from "@mui/material";
-import Link from 'next/link';
+"use client";
+import React, { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemButton,
+  Typography,
+  Container,
+  Button,
+  Box,
+} from "@mui/material";
+import Link from "next/link";
 
-
-
-
-export default function Header(){
+export default function Header() {
   const [drawerOpen, setDrawer] = React.useState(false);
   const handleDrawerOpen = () => {
     setDrawer(true);
@@ -14,63 +23,62 @@ export default function Header(){
   const handleDrawerClouse = () => {
     setDrawer(false);
   };
-  
-  
-  return ( 
+
+  return (
     <AppBar position="static">
-    <Toolbar>
-    <Drawer open={drawerOpen} anchor="left">
-    <List>
-    <Link href="/">
-    <ListItem>
-    <Button onClick={handleDrawerClouse} color="primary">
-    Home
-    </Button>
-    </ListItem>
-    </Link>
-    
-    <Link href="/AboutMe"style= {{ textDecoration: 'none' }}  >
-    <ListItem>
-    <ListItemText primary={
-      <Typography onClick={handleDrawerClouse} variant='overline' color={"primary"} align='center' style={{ display: 'flex', justifyContent: 'center' }}>
-      Страничка01
-      </Typography>
-    } />
-    </ListItem>
-    </Link>
-    
-    <Link href="/AboutMe/Gallery"style= {{ textDecoration: 'none' }}  >
-    <ListItem>
-    <ListItemText primary={
-      <Typography onClick={handleDrawerClouse} variant='overline' color={"primary"} align='center' style={{ display: 'flex', justifyContent: 'center' }}>
-      Gallery
-      </Typography>
-    } />
-    </ListItem>
-    </Link>
-    
-    
-    
-    
-    
-    
-    
-    
-    </List>
-    </Drawer>
-    <Button onClick={handleDrawerOpen} color="inherit">
-    Open
-    </Button>
-    
-    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-    My appliceshion 
-    </Typography>
-    </Toolbar>
-    
-    
-    </AppBar>  
-    
-    
-    
-  ); 
-};
+      <Toolbar>
+        <Drawer open={drawerOpen} anchor="left">
+          <List>
+            <Link href="/" style={{ textDecoration: "none" }}>
+              <ListItem>
+                <Button onClick={handleDrawerClouse} color="primary">
+                  Home
+                </Button>
+              </ListItem>
+            </Link>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Link href="/AboutMe" style={{ textDecoration: "none" }}>
+                <ListItem>
+                  <Button
+                    onClick={handleDrawerClouse}
+                    variant="text"
+                    color="primary"
+                  >
+                    Page 1
+                  </Button>
+                </ListItem>
+              </Link>
+
+              <Link href="/AboutMe/Gallery" style={{ textDecoration: "none" }}>
+                <ListItem>
+                  <Button
+                    onClick={handleDrawerClouse}
+                    variant="text"
+                    color="primary"
+                  >
+                    Gallery
+                  </Button>
+                </ListItem>
+              </Link>
+            </div>
+          </List>
+        </Drawer>
+        <Button onClick={handleDrawerOpen} color="inherit">
+          Menu
+        </Button>
+
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          My appliceshion
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  );
+}

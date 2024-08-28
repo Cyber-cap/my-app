@@ -27,8 +27,9 @@ import Link from 'next/link';
 
 function NavBar() {
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <Box mt={2}>
+    <AppBar position="static" >
+      <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <Box
             sx={{
@@ -37,14 +38,15 @@ function NavBar() {
               width: "100%",
             }}
           >
-            <Button>Raz</Button>
-            <Button>Dva</Button>
-            <Button>Tri</Button>
-            <Button>Chetire</Button>
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+            <Button>Four</Button>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
+    </Box>
   );
 }
 
@@ -80,15 +82,15 @@ function Content() {
               >
                 <List>
                   <Link href="./AboutMe/GridCSS" style={{ color: 'inherit', textDecoration: 'inherit'}} >
-                    <Typography textAlign="center" > Гриды CSS</Typography>
+                    <Typography textAlign="center" > Grids CSS</Typography>
                   </Link>
 
-                  <ListItemButton>Knopka 2</ListItemButton>
+                  <ListItemButton>Button 2</ListItemButton>
 
-                  <ListItemButton>Knopka 3</ListItemButton>
-                  <ListItemButton>Knopka 4</ListItemButton>
-                  <ListItemButton>Knopka 5</ListItemButton>
-                  <ListItemButton>Knopka 6</ListItemButton>
+                  <ListItemButton>Button 3</ListItemButton>
+                  <ListItemButton>Button 4</ListItemButton>
+                  <ListItemButton>Button 5</ListItemButton>
+                  <ListItemButton>Button 6</ListItemButton>
                 </List>
               </Box>
               <Box>
