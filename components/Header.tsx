@@ -20,18 +20,18 @@ export default function Header() {
   const handleDrawerOpen = () => {
     setDrawer(true);
   };
-  const handleDrawerClouse = () => {
+  const handleDrawerClose = () => {
     setDrawer(false);
   };
 
   return (
     <AppBar position="static">
       <Toolbar>
-        <Drawer open={drawerOpen} anchor="left">
+         <Drawer open={drawerOpen} anchor="left" onClose={handleDrawerClose}> 
           <List>
             <Link href="/" style={{ textDecoration: "none" }}>
               <ListItem>
-                <Button onClick={handleDrawerClouse} color="primary">
+                <Button onClick={handleDrawerClose} color="primary">
                   Home
                 </Button>
               </ListItem>
@@ -48,7 +48,7 @@ export default function Header() {
               <Link href="/AboutMe" style={{ textDecoration: "none" }}>
                 <ListItem>
                   <Button
-                    onClick={handleDrawerClouse}
+                    onClick={handleDrawerClose}
                     variant="text"
                     color="primary"
                   >
@@ -60,7 +60,7 @@ export default function Header() {
               <Link href="/AboutMe/Gallery" style={{ textDecoration: "none" }}>
                 <ListItem>
                   <Button
-                    onClick={handleDrawerClouse}
+                    onClick={handleDrawerClose}
                     variant="text"
                     color="primary"
                   >

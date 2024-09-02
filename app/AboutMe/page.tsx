@@ -22,30 +22,31 @@ import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import Image from "public/kub.jpg";
-import Link from 'next/link';
-
+import Link from "next/link";
 
 function NavBar() {
   return (
     <Box mt={2}>
-    <AppBar position="static" >
-      <Container maxWidth="xl" >
-        <Toolbar disableGutters>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "100%",
-            }}
-          >
-            <Button>One</Button>
-            <Button>Two</Button>
-            <Button>Three</Button>
-            <Button>Four</Button>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+      <AppBar position="static">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                width: "100%",
+              }}
+            >
+              <Link href="./">
+                <Button>One</Button>
+              </Link>
+              <Button>Two</Button>
+              <Button>Three</Button>
+              <Button>Four</Button>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
     </Box>
   );
 }
@@ -73,7 +74,7 @@ function Content() {
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={2}>
             <Paper>
-              <Box 
+              <Box
                 sx={{
                   width: "100%",
                   maxWidth: 420,
@@ -81,8 +82,11 @@ function Content() {
                 }}
               >
                 <List>
-                  <Link href="./AboutMe/GridCSS" style={{ color: 'inherit', textDecoration: 'inherit'}} >
-                    <Typography textAlign="center" > Grids CSS</Typography>
+                  <Link
+                    href="./AboutMe/GridCSS"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <Typography textAlign="center"> Grids CSS</Typography>
                   </Link>
 
                   <ListItemButton>Button 2</ListItemButton>
